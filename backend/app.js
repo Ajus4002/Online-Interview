@@ -33,8 +33,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/users', authenticate('user'), usersRouter);
-app.use('/', authenticate('admin'), indexRouter);
+app.use('/api/users', authenticate('user'), usersRouter);
+app.use('/api/', authenticate('admin'), indexRouter);
 
 const expressWs = require('express-ws')(app);
 const WebsocketHandler = require('./websocket-handler')
