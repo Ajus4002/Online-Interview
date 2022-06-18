@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Jura', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #3c5b9b;
+}
+
+.App {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.text-grey {
+  color: gray;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.site-tag-plus {
+  background: #fff !important;
+  border-style: dashed !important;
+}
+
+.ant-layout {
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+html, body {
+  height: unset !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+.video-container {
+  position: relative;
+  display: flex;
+}
+
+#remote-video {
+  width: 100%;
+}
+
+#local-video {
+  position: absolute;
+  width: 25%;
+  right: 0;
+  bottom: 0;
+}
+
+#remote-screen {
+  width: 100%;
+}
+
+.question-item .question {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.question-item {
+  margin-top: 5px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.question-item:first-child {
+  margin-top: 0;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+}
+.Logoimage{
+  width: 330px;
+height: 220px;
+}
+
+.logincard{
+
+  width: 400px;
+  border-radius: 10px;
+ 
+}
