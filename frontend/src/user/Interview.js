@@ -2,7 +2,7 @@ import {Badge, Button, Card, Col, Form, Input, notification, Row} from "antd";
 import {useEffect, useRef, useState} from "react";
 import StatusColors from "../StatusColors";
 import {useNavigate, useParams} from "react-router-dom";
-import api from "../api";
+import api, {SOCKET_URL} from "../api";
 
 export default function Interview() {
     const navigate = useNavigate()
@@ -78,7 +78,7 @@ export default function Interview() {
                 return;
             }
 
-            const webSocket = new WebSocket(encodeURI('ws://localhost:4000/socket?type=user&token=' + localStorage.getItem('user.token')));
+            const webSocket = new WebSocket(encodeURI(SOCKET_URL + '?type=user&token=' + localStorage.getItem('user.token')));
             webSocket.onmessage = e => processMessage(JSON.parse(e.data));
             webSocket.onopen = () => resolve();
             webSocket.onclose = (e) => socket.current = null;

@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import {Badge, Button, Card, Drawer, message, Table} from "antd";
 import {useEffect, useRef, useState} from "react";
-import api from "../api";
+import api, {SOCKET_URL} from "../api";
 
 export default function JobList () {
     const navigate = useNavigate()
@@ -45,12 +45,13 @@ export default function JobList () {
 
     const [socket, setSocket] = useState(null)
 
+
     function connectSocket() {
         if (socket) {
             return
         }
 
-        const webSocket = new WebSocket('ws://' + api.defaults.baseURL.split('//')[1] + 'socket?type=admin&token=' + localStorage.getItem('admin.token'));
+        const webSocket = new WebSocket(SOCKET_URL + '?type=admin&token=' + localStorage.getItem('admin.token'));
         webSocket.onmessage = e => processMessage(JSON.parse(e.data));
         webSocket.onopen = _ => webSocket.send(JSON.stringify({ subject: 'get-active-clients', to: 'server' }));
         webSocket.onclose = _ => setSocket(null)

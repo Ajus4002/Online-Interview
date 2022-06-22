@@ -55,9 +55,16 @@ export default function Login() {
                         </Form.Item>
 
                         <Form.Item>
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
                             <Button type="primary" htmlType="submit" loading={loading}>
                                 Login
                             </Button>
+
+                            <Button onClick={()=>navigate('/register')} type="link" htmlType="submit" >
+                            Register
+                        </Button>
+                        </div>
+        
                         </Form.Item>
                     </Form>
                 </Card>

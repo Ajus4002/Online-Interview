@@ -14,13 +14,16 @@ export default function AccountExperience({data, onChange}) {
     async function addExperience(data) {
         try {
             setLoading(true)
+
+            data.skills = data.skills.map(v => v.value ?? (v._id ?? v))
+            
             await api.post('/users/experience', data)
             onChange()
             setAddModel(false)
 
             message.success("Experience added successfully")
         } catch (e) {
-            message.error(e.response?.data.message);
+            message.error(e.response?.data.message ?? e.message);
         } finally {
             setLoading(false)
         }

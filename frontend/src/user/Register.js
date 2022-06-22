@@ -65,10 +65,20 @@ export default function Register() {
                         </Form.Item>
 
                         <Form.Item>
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
                             <Button type="primary" htmlType="submit" loading={loading}>
                                 Register
                             </Button>
+                            
+                            <Button onClick={()=>navigate('/login')} type="link" htmlType="submit" >
+                            Login
+                        </Button>
+                        </div>
                         </Form.Item>
+
+                       
+
+                        
                     </Form>
                 </Card>
             </Col>

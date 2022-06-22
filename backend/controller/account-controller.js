@@ -67,7 +67,7 @@ const{value,error}=schema.validate(req.body)
 
 if (error) {
     return res
-        .status(401)
+        .status(400)
         .json(Response.error('invalid request'))
 }
 
@@ -76,7 +76,7 @@ const admin = await Admin.findById(req.params.id)
 if (admin.email !== value.email) {
     if (await Admin.findOne({email: value.email})) {
         return res
-        .status(401)
+        .status(400)
         .json(res.error("Admin already exist"))
     }
 }
